@@ -8,7 +8,10 @@ export class LoggerService {
   messageList: string[] = [];
 
   log(message: string): void {
-    debugger;
     this.messageList.push(message);
+  }
+
+  clear(): void {
+    this.messageList = [];
   }
 }
