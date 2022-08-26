@@ -12,6 +12,6 @@ export class PostService {
     }
     
     deletePost(post: PostI) { 
-        return this.http.delete(`https://jsonplaceholder.typicode/posts/${post.id}`);        
+        return this.http.delete(`https://jsonplaceholder.typicode/post/${post.id}`);        
     }
 }

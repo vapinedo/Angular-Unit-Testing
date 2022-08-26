@@ -23,7 +23,7 @@ export class PostsComponent implements OnInit {
   }
 
   delete(post: PostI) {
-    this.posts = this.posts.filter((post) => post.id !== post.id);
+    this.posts = this.posts.filter((x) => x.id !== post.id);
     this.postSvc.deletePost(post).subscribe();
   }
 }
