@@ -7,12 +7,12 @@ import { PostI } from 'src/app/interfaces/post.interface';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
-  @Input() post: PostI | null = null;
-  @Output() delete = new EventEmitter<void>();
+  @Input() post!: PostI;
+  @Output() delete = new EventEmitter<PostI>();
 
   onDelete(event: Event) {
     event.stopPropagation();
-    this.delete.emit();
+    this.delete.emit(this.post);
   }
 
 }
