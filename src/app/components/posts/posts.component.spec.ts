@@ -12,7 +12,7 @@ class mockPostSvc {
   }
 }
 
-describe('Post Component', () => {
+describe('Posts Component', () => {
   let postList: PostI[];
   let component: PostsComponent;
   let postService: any;
