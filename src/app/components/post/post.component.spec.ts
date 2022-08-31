@@ -1,4 +1,5 @@
 import { first } from "rxjs";
+import { By } from "@angular/platform-browser";
 import { PostComponent } from "./post.component";
 import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { PostI } from "src/app/interfaces/post.interface";
@@ -28,6 +29,15 @@ describe("Post Componnent", () => {
         const postElement: HTMLElement = fixture.nativeElement;
         const a = postElement.querySelector("a");
         expect(a?.textContent).toContain(post.title);
+    });
+    
+    it("should render the post title in the anchor tag, using debug element", () => {
+        const post: PostI = { id: 1, body: "body 1", title: "title 1" };
+        component.post = post;
+        fixture.detectChanges();
+        const postDebugElement = fixture.debugElement;
+        const aElement: HTMLElement = postDebugElement.query(By.css("a")).nativeElement;
+        expect(aElement.textContent).toContain(post.title);
     });
 
     it("should raise an event when the delete post is clicked",  () => {
